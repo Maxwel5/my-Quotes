@@ -4,21 +4,30 @@
     <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
         <div class="form-group">
 
-            <label for="name">Name</label>
-            <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name"
-                #name='ngModel' required>
+            <label for="quote">Quote</label>
+            <input type="text" required class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #name='ngModel' required>
             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                <p>Name is required</p>
+                <p>Quote is required</p>
             </div>
 
         </div>
         <div class="form-group">
 
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="4" [(ngModel)]="newQuote.description"
-                name="description" #description="ngModel" required></textarea>
-            <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
-                <p>Description is required</p>
+                <label for="author">Author</label>
+                <input type="text" required class="form-control" id="author" [(ngModel)]="newQuote.author" name="author"
+                    #author='ngModel' required>
+                <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                    <p>Provide author name</p>
+                </div>
+    
+            </div>
+        <div class="form-group">
+
+            <label for="provider">Provider</label>
+            <input class="form-control" id="provider" [(ngModel)]="newQuote.provider" name="provider"
+                #provider="ngModel" required>
+            <div [hidden]="provider.valid || provider.pristine" class="alert alert-danger">
+                <p>Who submitted the quote?</p>
             </div>
         </div>
         <div class="form-group">
