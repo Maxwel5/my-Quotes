@@ -3,4 +3,15 @@ body {
 }
 h1 {
     font-family: 'Graduate', cursive;
+    font-size: 50px;
+    color: blue;
+}
+h2 {
+    text-align: center;
+    color: black;
+}
+#final {
+    font-family: 'Graduate', cursive;
+    font-size: 30px;
+    color: blue;
 }
