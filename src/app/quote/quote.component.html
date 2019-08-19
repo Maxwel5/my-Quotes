@@ -1,0 +1,10 @@
+<h1>Quotes Choice</h1>
+<hr>
+<ul>
+  <div *ngFor='let quote of quotes;let i = index'>
+    <li>{{quote.name}}</li>
+    <button (click)='findDetails(i)'>find Details</button>
+    <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+  </div>
+</ul>
+<p *ngIf='quotes.length > 5'>You have too many quotes</p>
