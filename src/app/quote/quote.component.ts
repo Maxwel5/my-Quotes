@@ -7,12 +7,11 @@ import { Quote } from'../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
-      new Quote('The pessimist sees difficulty in every opportunity','Max Sim','Solos', new Date(2019,8,14)),
+      new Quote('Change your thoughts and you change your world','Max Sim','Solos', new Date(2019,8,14)),
       new Quote('When you wake up each morning, you can choose to be happy or choose to be sad','Audrey Cheng', 'Solos', new Date(2019,5,23)),
       new Quote('You learn more from failure than from success','Vicky Kam','Solos', new Date(2019,3,7)),
       new Quote('One life is all we have and we live it as we believe in living it','Phillip g','Solos',new Date(2019,11,18)),
       new Quote('Those who realize their folly are not true fools','Salat F','Solos',new Date(2019,2,14)),
-      new Quote('Change your thoughts and you change your world','Leo M','Solos',new Date(2019,3,14)),
     ];
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
