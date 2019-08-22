@@ -8,7 +8,8 @@ Maxwel Wafula
 
 ## Instructions
 
-Using Angular CLI Link: https://maxwel5.github.io/my-Quotes/
+Using Angular CLI
+Link: https://maxwel5.github.io/my-Quotes/
 
 ## Development server
 
@@ -34,6 +35,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## License
+## Licence
 
 This project is guranteerd permision and any relevant changes are allowed.
