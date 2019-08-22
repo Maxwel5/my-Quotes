@@ -1,33 +1,43 @@
-<div class="container">
-    <h1 class="jumbotron text-center">QUOTES CHOICE</h1>
-    <div class="">
-        <h2>Do you know that quotes creat a better world requires teamwork, partnerships, and collaboration, as we need an entire army of companies to work together to build a better world within the next few decades.</h2>
-    </div>
-    <hr>
-  
-    <div class="row">
-      <div class="col-md-6">
-        <div *ngFor='let quote of quotes;let i = index'>
-          <div>
-            <h6 id={{i}} appStrikethrough>{{quote.quote}} due on {{quote.completeDate|date|uppercase}}</h6>
-            <button (click)='toggleDetails(i)' class="btn btn-primary">See More</button>
-            <button type="button" name="button" (click)='quote.downvote = quote.downvote  +1'>Dislike{{quote.downvote}}</button>
-            <button type="button" name="button" (click)='quote.upvote = quote.upvote  +1'>Like
-                {{quote.upvote}}
-            </button>
-          </div>
-  
-          <div *ngIf='quote.showDescription'>
-            <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
-          </div>
+<div class="container-fluid">
+  <h1 class="jumbotron text-center">QUOTES CHOICE</h1>
+  <div class="">
+    <h2>Do you know that quotes creat a better world requires teamwork, partnerships, and collaboration, as we need an
+      entire army of companies to work together to build a better world within the next few decades.</h2>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let quote of quotes;let i = index'>
+        <p appHighlight *ngIf="hUpvote()===quote.upvote && 
+            quote.upvote>0">
+          Quote Name: {{quote.quote}}
+        </p>
+
+        <p *ngIf="hUpvote()!==quote.upvote || quote.upvote===0">
+          Quote Name: {{quote.quote}}
+        </p>
+        <div>
+          <h6 id={{i}} appStrikethrough>Revised on {{quote.completeDate|date|uppercase}}</h6>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">See More</button>
+          <button type="button" name="button"
+            (click)='quote.downvote = quote.downvote  +1'>Dislike{{quote.downvote}}</button>
+          <button type="button" name="button" (click)='quote.upvote = quote.upvote  +1'>Like
+            {{quote.upvote}}
+          </button>
+        </div>
+
+        <div *ngIf='quote.showDescription'>
+          <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
         </div>
       </div>
-      <div class="col-md-6">
-        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-      </div>
     </div>
-    <p *ngIf='quotes.length > 5'>You have too many quotes</p>
-    <p id="final" class="text-center">Willing to learn and find the quote of your choice is what we gurantee our users
-    
-    </p>
+    <div class="col-md-6">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
   </div>
+  <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+  <p id="final" class="text-center">Willing to learn and find the quote of your choice is what we gurantee our users
+
+  </p>
+</div>
