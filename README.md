@@ -9,7 +9,7 @@ Maxwel Wafula
 ## Instructions
 
 Using Angular CLI
-Link: https://maxwel5.github.io/my-Quotes/
+Link:  https://maxwel5.github.io/my-Quotes/
 
 ## Development server
 
